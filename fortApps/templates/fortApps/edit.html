@@ -1,0 +1,46 @@
+{% extends "fortApps/bases.html" %}
+
+{% block title %}
+    <title>edit</title>
+    {% endblock %}
+
+    {% block content %}
+
+<div class="container mt-5">
+
+    <form action="{% url 'edit' dets.id %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control"  placeholder="Enter name" value="{{dets.name}}">
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <input type="text" name="status" class="form-control" placeholder="Enter Status" value="{{dets.status}}">
+        </div>
+
+        <div class="form-group">
+            <label>Color</label>
+            <input type="text" name="color" class="form-control"  placeholder="color" value="{{dets.color}}">
+        </div>
+
+        <div class="form-group">
+            <label>Weight</label>
+            <input type="text" name="wt" class="form-control" placeholder="Enter wt" value="{{dets.wt}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    {% endblock %}
+
+    {% block js %}
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+
